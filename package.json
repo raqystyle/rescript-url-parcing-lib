@@ -3,20 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "res:build": "rescript build -with-deps",
+    "res:build": "rescript",
+    "res:dev": "rescript -w",
     "res:clean": "rescript clean",
-    "res:dev": "rescript build -w",
-    "res:demo": "rescript && node src/Demo.bs.js",
-    "res:analyze": ""
+    "res:demo": "rescript && node src/Demo.res.js"
   },
   "dependencies": {
-    "@rescript/core": "*",
-    "rescript": "*",
-    "rescript-json": "^1.0.6"
-  },
-  "devDependencies": {
-    "bs-platform": "^9.0.2",
-    "gentype": "^4.5.0",
-    "reanalyze": "^2.23.0"
+    "@rescript/core": "^1.6.1",
+    "rescript": "^11.1.4"
   }
 }

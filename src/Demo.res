@@ -18,9 +18,9 @@ inputs->Array.forEach(input => {
     Main.urlParser
     ->Parser.runParser(input)
     ->Option.map(((_, xs)) => {
-      xs->List.flatten->Main.toResults
+      xs->List.flat->Main.toResults
     })
-    ->Option.getWithDefault(Main.initial),
+    ->Option.getOr(Main.initial),
   )
 })
 

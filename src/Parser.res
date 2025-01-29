@@ -49,7 +49,7 @@ let parallel: list<t<'a>> => t<list<'a>> = ps => Parser(
       ps
       ->List.map(p => runParser(p, s))
       ->List.reduce(("", list{}), ((s', acc), res) => {
-        res->Option.mapWithDefault((s', acc), ((s'', a)) => (
+        res->Option.mapOr((s', acc), ((s'', a)) => (
           String.length(s') < String.length(s'') ? s' : s'',
           list{...acc, a},
         ))
